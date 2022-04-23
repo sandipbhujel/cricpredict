@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}" type="text/css">
+    <link rel="stylesheet" href="{%static 'styles/relate.css' %}">
+    <link href="{%static 'styles/global.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="{% static 'styles/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{%static 'js/bootstrap.min.js' %}"></script>
+    <title>CricPredict</title>
+</head>
+<body style="background-color: rgb(218, 211, 203);">
+    {% include 'navbar.html' %}
+    {% include 'todaysmatch.html' %}
+    {% block content %}
+
+    {% endblock %}
+    {% include 'footer.html' %}
+    <script>
+        $(document).ready(function(){
+            /*****Fixed Menu******/
+            var secondaryNav = $('.cd-secondary-nav'),
+               secondaryNavTopPosition = secondaryNav.offset().top;
+                $(window).on('scroll', function(){
+                    if($(window).scrollTop() > secondaryNavTopPosition ) {
+                        secondaryNav.addClass('is-fixed');	
+                    } else {
+                        secondaryNav.removeClass('is-fixed');
+                    }
+                });	
+                
+        });
+        </script>
+</body>
+</html>
